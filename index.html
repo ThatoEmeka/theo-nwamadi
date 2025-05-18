@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chukwudi Theophilus Nwamadi - MD of Interim Consulting, driving HR excellence and foreign investment across Africa.">
+    <meta name="keywords" content="Chukwudi Nwamadi, Theo Nwamadi, Interim Consulting, Human Resources, HR, South Africa, Nigeria, Foreign Investment, Dangote, MTN, Telkom, Standard Bank, ABSA, Anglo-American, DeBeers, Sasol, SARS, DHL, Group Five, Pick n Pay, Kia, Hyundai, Wynn's, Maxidor, SETA, APSO, Nigeria High Commission, Patriots Club, Ome k’ahuru anya I, Ahmadu Bello University, God Did Not Come to the Party">
+    <title>Chukwudi Theophilus Nwamadi - MD, Interim Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        /* Custom Styles for Formal Light Theme */
+        :root {
+            --bg-primary: #f8f8f8; /* Very Light Gray */
+            --bg-secondary: #eeeeee; /* Light Gray */
+            --bg-card: #ffffff; /* White */
+            --text-primary: #333333; /* Dark Gray */
+            --text-secondary: #555555; /* Medium Gray */
+            --accent: #0056b3; /* Professional Blue */
+            --accent-hover: #004085; /* Darker Blue */
+            --border-color: #dddddd; /* Light Border Gray */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            position: relative; /* Needed for potential overlays */
+        }
+
+        /* Remove Lava Lamp Canvas - Not needed for formal theme */
+        #lava-lamp-bg {
+            display: none;
+        }
+
+        /* Main content wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            background-color: transparent;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white on scroll */
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .nav-link {
+             @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors duration-200;
+        }
+        .nav-link.active {
+             @apply bg-gray-300 text-gray-900;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+             @apply px-6;
+            background-color: var(--bg-primary); /* Solid light background */
+        }
+         .hero-content {
+             z-index: 2;
+             position: relative;
+         }
+
+        /* Animated Name */
+        .name-char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px); /* Simpler animation */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: clamp(2rem, 8vw, 4rem); /* Adjusted size */
+            line-height: 1.2;
+        }
+
+        .hero-tagline {
+            color: var(--text-secondary);
+            font-size: clamp(1rem, 3vw, 1.15rem);
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            font-weight: 400; /* Slightly heavier */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out 1s forwards;
+        }
+
+        /* Remove Glitch Animation - Not formal */
+        .glitch-container {
+            display: none;
+        }
+
+
+        /* Section Styling */
+        .section-padding {
+             @apply px-6 py-20 md:py-28;
+        }
+
+        .section-heading {
+            font-size: clamp(2rem, 6vw, 3rem); /* Slightly smaller for formality */
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .section-subheading {
+            font-size: clamp(1rem, 3vw, 1.1rem); /* Slightly smaller */
+            font-weight: 300;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            text-align: center;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Card Styling */
+        .info-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px; /* Slightly less rounded */
+            padding: 1.5rem; /* Adjusted padding */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(30px); /* Less vertical movement */
+             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+        }
+         .info-card:hover {
+             transform: translateY(-5px); /* Less pronounced hover */
+             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow on hover */
+             border-color: var(--accent); /* Accent color border on hover */
+         }
+        .info-card h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem; /* Slightly smaller */
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem; /* Slightly larger text for readability */
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+
+        /* Client/Brand Logo Carousel Section */
+        .logo-carousel-section {
+             @apply py-16 md:py-20;
+             background-color: var(--bg-secondary);
+             overflow: hidden;
+             position: relative;
+             border-top: 1px solid var(--border-color); /* Add subtle borders */
+             border-bottom: 1px solid var(--border-color);
+        }
+        .logo-carousel-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .logo-track {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            width: calc(200px * 14 * 2);
+        }
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-item {
+            width: 150px;
+            height: 60px;
+            margin: 0 25px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-item span {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(80%) opacity(0.7); /* More visible grayscale */
+            transition: filter 0.3s ease, color 0.3s ease;
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--text-secondary); /* Use secondary text color */
+            font-weight: 500; /* Slightly bolder */
+        }
+         .logo-item:hover span {
+             filter: grayscale(0%) opacity(1);
+             color: var(--accent); /* Accent color on hover */
+         }
+
+        @keyframes scroll {
+             0% { transform: translateX(0); }
+             100% { transform: translateX(calc(-200px * 14)); }
+        }
+         /* Fade edges */
+         .logo-carousel-container::before,
+         .logo-carousel-container::after {
+             content: '';
+             position: absolute;
+             top: 0;
+             bottom: 0;
+             width: 100px;
+             z-index: 2;
+             pointer-events: none;
+         }
+         .logo-carousel-container::before {
+             left: 0;
+             background: linear-gradient(to right, var(--bg-secondary), transparent);
+         }
+         .logo-carousel-container::after {
+             right: 0;
+             background: linear-gradient(to left, var(--bg-secondary), transparent);
+         }
+
+        /* Timeline Section */
+        #journey {
+             background-color: var(--bg-secondary);
+        }
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        /* The vertical line */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px; /* Thinner line */
+            background-color: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+            z-index: 0;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .timeline-item.is-visible {
+             opacity: 1;
+             transform: translateY(0);
+        }
+        /* The circle on the timeline */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px; /* Slightly smaller circle */
+            height: 16px;
+            right: -8px;
+            background-color: var(--bg-card); /* White circle fill */
+            border: 3px solid var(--accent); /* Accent border */
+            top: 28px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        /* Positioning */
+        .timeline-left { left: 0; }
+        .timeline-right { left: 50%; }
+        /* Right item adjustments */
+        .timeline-right::after { left: -8px; }
+        /* Content box */
+        .timeline-content {
+            padding: 1.2rem; /* Slightly less padding */
+            background-color: var(--bg-card);
+            position: relative;
+            border-radius: 6px; /* Slightly less rounded */
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+         .timeline-content h3 {
+             @apply text-base font-semibold mb-1; /* Smaller heading */
+             color: var(--text-primary);
+         }
+         .timeline-content .date {
+             @apply text-xs font-medium uppercase tracking-wider mb-2; /* Adjusted margin */
+             color: var(--accent);
+         }
+         .timeline-content p {
+             @apply text-sm;
+             color: var(--text-secondary);
+         }
+        /* Arrows for content boxes */
+        .timeline-left .timeline-content::before { /* Right arrow */
+            content: " "; height: 0; position: absolute; top: 20px; width: 0; z-index: 1; right: -8px; border: medium solid var(--bg-card); border-width: 8px 0 8px 8px; border-color: transparent transparent transparent var(--bg-card);
+        }
+        .timeline-right .timeline-content::before { /* Left arrow */
+             content: " "; height: 0; position: absolute; top: 20px; width: 0; z-index: 1; left: -8px; border: medium solid var(--bg-card); border-width: 8px 8px 8px 0; border-color: transparent var(--bg-card) transparent transparent;
+        }
+        /* Responsive Timeline */
+        @media screen and (max-width: 768px) {
+            .timeline-container::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::after { left: 22px; }
+            .timeline-right { left: 0%; }
+            .timeline-left .timeline-content::before, .timeline-right .timeline-content::before {
+                left: -8px; border-width: 8px 8px 8px 0; border-color: transparent var(--bg-card) transparent transparent;
+            }
+             .logo-item span {
+                 font-size: 0.8rem; /* Adjust text size on mobile */
+             }
+        }
+
+        /* Contact Button */
+        .contact-button {
+            background-color: var(--accent);
+            color: var(--text-primary);
+            padding: 0.7rem 1.8rem; /* Adjusted padding */
+            border-radius: 6px; /* Less rounded */
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Faster transform */
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+        }
+        .contact-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px); /* Less movement */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0; /* Less padding */
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Scroll Animation Class */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px); /* Less movement */
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Slightly faster */
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="content-wrapper">
+
+        <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-3 transition-all duration-300">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <a href="#home" class="text-xl font-bold text-gray-800">Theo Nwamadi</a>
+                <div class="hidden md:flex space-x-1">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#interim" class="nav-link">Interim Consulting</a>
+                    <a href="#investment" class="nav-link">Investment</a>
+                    <a href="#journey" class="nav-link">Journey</a>
+                    <a href="#contact" class="nav-link">Connect</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-gray-100 mt-2 mx-4 rounded-lg shadow-lg border border-gray-300">
+                <a href="#home" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200 rounded-t-lg">Home</a>
+                <a href="#about" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200">About</a>
+                <a href="#interim" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200">Interim Consulting</a>
+                <a href="#investment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200">Investment</a>
+                <a href="#journey" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200">Journey</a>
+                <a href="#contact" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200 rounded-b-lg">Connect</a>
+            </div>
+        </nav>
+
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 id="animated-name" class="mb-4" aria-label="Chukwudi Theophilus Nwamadi">
+                    </h1>
+                <h2 class="text-xl md:text-2xl font-semibold text-gray-700 mb-6">Managing Director, Interim Consulting Pty Ltd</h2>
+                <p class="hero-tagline">
+                    A visionary leader and strategic force, driving human resources excellence and facilitating transformative foreign investment across South Africa and Nigeria.
+                </p>
+                <a href="#about" aria-label="Scroll down" class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 text-gray-600 opacity-70 hover:opacity-100 transition-opacity animate-bounce hidden md:block">
+                     <i data-lucide="arrow-down-circle" class="w-8 h-8"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="section-padding fade-in-section">
+            <div class="container mx-auto">
+                 <h2 class="section-heading">Meet Theo</h2>
+                 <p class="section-subheading">
+                     A seasoned professional with a profound impact on human resources and economic development across the African continent.
+                 </p>
+                <div class="max-w-4xl mx-auto text-center text-lg leading-relaxed space-y-6">
+                    <p>
+                        Fondly known as Theo, Mr. Chukwudi Theophilus Nwamadi stands at the helm of Interim Consulting Pty Ltd, a leading human resources services provider. His strategic vision has cultivated enduring partnerships with prominent blue-chip organizations throughout South Africa and Nigeria, solidifying Interim Consulting's reputation for excellence.
+                    </p>
+                    <p>
+                        Beyond his corporate leadership, Theo is a dedicated advocate for African progress. His influential roles in diplomatic relations, community initiatives, and significant contributions to attracting foreign investment underscore his commitment to fostering growth and opportunity across the region.
+                    </p>
+                     <img src="https://placehold.co/200x200/cccccc/333333?text=Theo" alt="Chukwudi Theophilus Nwamadi - Placeholder" class="w-36 h-36 rounded-full mx-auto mt-12 mb-4 shadow-md border-4 border-gray-300" onerror="this.src='https://placehold.co/200x200/cccccc/333333?text=Theo'; this.onerror=null;">
+                </div>
+            </div>
+        </section>
+
+        <section id="interim" class="logo-carousel-section">
+             <h3 class="text-center text-lg font-medium text-gray-600 mb-8 tracking-wider uppercase">Interim Consulting: Serving Top-Tier Clients</h3>
+             <div class="logo-carousel-container">
+                 <div class="logo-track">
+                     <div class="logo-item"><span>Dangote Group</span></div>
+                     <div class="logo-item"><span>Telkom SA</span></div>
+                     <div class="logo-item"><span>MTN Group</span></div>
+                     <div class="logo-item"><span>Eskom SA</span></div>
+                     <div class="logo-item"><span>Globacom</span></div>
+                     <div class="logo-item"><span>Standard Bank</span></div>
+                     <div class="logo-item"><span>ABSA Bank</span></div>
+                     <div class="logo-item"><span>World Vision</span></div>
+                     <div class="logo-item"><span>Anglo-American</span></div>
+                     <div class="logo-item"><span>DeBeers</span></div>
+                     <div class="logo-item"><span>Sasol Petrochemicals</span></div>
+                     <div class="logo-item"><span>SARS</span></div>
+                     <div class="logo-item"><span>DHL Cargo</span></div>
+                     <div class="logo-item"><span>Group Five</span></div>
+                     <div class="logo-item"><span>Dangote Group</span></div>
+                     <div class="logo-item"><span>Telkom SA</span></div>
+                     <div class="logo-item"><span>MTN Group</span></div>
+                     <div class="logo-item"><span>Eskom SA</span></div>
+                     <div class="logo-item"><span>Globacom</span></div>
+                     <div class="logo-item"><span>Standard Bank</span></div>
+                     <div class="logo-item"><span>ABSA Bank</span></div>
+                     <div class="logo-item"><span>World Vision</span></div>
+                     <div class="logo-item"><span>Anglo-American</span></div>
+                     <div class="logo-item"><span>DeBeers</span></div>
+                     <div class="logo-item"><span>Sasol Petrochemicals</span></div>
+                     <div class="logo-item"><span>SARS</span></div>
+                     <div class="logo-item"><span>DHL Cargo</span></div>
+                     <div class="logo-item"><span>Group Five</span></div>
+                 </div>
+             </div>
+         </section>
+
+        <section id="investment" class="section-padding fade-in-section">
+            <div class="container mx-auto">
+                 <h2 class="section-heading">Catalyst for Foreign Investment</h2>
+                 <p class="section-subheading">
+                     Facilitating the successful entry of major international brands, significantly contributing to Nigeria's economic landscape.
+                 </p>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+                     <div class="info-card fade-in-section">
+                         <h3>Pick n Pay Retail Group</h3>
+                         <p>Instrumental in facilitating the market entry and establishment of this major retail force in Nigeria.</p>
+                     </div>
+
+                     <div class="info-card fade-in-section" style="transition-delay: 0.1s;">
+                         <h3>Kia & Hyundai</h3>
+                         <p>Played a strategic role in the entry of these prominent automotive brands, expanding market options and creating opportunities.</p>
+                     </div>
+
+                     <div class="info-card fade-in-section" style="transition-delay: 0.2s;">
+                         <h3>Wynn’s SA Automotive Oils</h3>
+                         <p>Enabled the successful introduction of Wynn's automotive products into the Nigerian market.</p>
+                     </div>
+
+                     <div class="info-card fade-in-section" style="transition-delay: 0.3s;">
+                         <h3>Maxidor SA</h3>
+                         <p>Facilitated the market penetration for Maxidor SA, contributing to the security sector.</p>
+                     </div>
+                     </div>
+            </div>
+        </section>
+
+        <section id="journey" class="section-padding fade-in-section">
+            <div class="container mx-auto">
+                 <h2 class="section-heading">Journey & Impact</h2>
+                 <p class="section-subheading">
+                     Key milestones and contributions shaping a distinguished career dedicated to progress in Africa.
+                 </p>
+
+                 <div class="timeline-container">
+                     <div class="timeline-item timeline-left fade-in-section">
+                         <div class="timeline-content">
+                             <span class="date">Early Career</span> <h3>Academic & Literary Roots</h3>
+                             <p>Graduated from Ahmadu Bello University, Zaria; Lectured at Borno College of Science and Technology; Served as Editor-in-Chief of the Student Union magazine; Authored over 22 articles in Nigerian newspapers.</p>
+                         </div>
+                     </div>
+                     <div class="timeline-item timeline-right fade-in-section" style="transition-delay: 0.15s;">
+                         <div class="timeline-content">
+                             <span class="date">1994</span> <h3>Relocation to South Africa</h3>
+                             <p>Moved to South Africa, inspired by the country's potential and opportunities for growth and contribution.</p>
+                         </div>
+                     </div>
+                     <div class="timeline-item timeline-left fade-in-section" style="transition-delay: 0.3s;">
+                         <div class="timeline-content">
+                             <span class="date">1995</span> <h3>National Essay Competition Win</h3>
+                             <p>Won the prestigious National Essay Competition with his piece "SA – Emerging Role in Africa," demonstrating early foresight and analytical skill.</p>
+                         </div>
+                     </div>
+                      <div class="timeline-item timeline-right fade-in-section" style="transition-delay: 0.45s;">
+                         <div class="timeline-content">
+                             <span class="date">Leadership Roles</span> <h3>Industry & Diplomatic Service</h3>
+                             <p>Served on the Boards of South Africa's SETA Services and Africa Personnel Services Organization (APSO); Contributed to diplomatic and community relations as a Council Member at the Nigeria High Commission.</p>
+                         </div>
+                     </div>
+                      <div class="timeline-item timeline-left fade-in-section" style="transition-delay: 0.6s;">
+                         <div class="timeline-content">
+                             <span class="date">Community Advocacy</span> <h3>Patriots Club President</h3>
+                             <p>Led the Patriots Club of Nigeria International, championing development initiatives and socio-cultural progress across the continent.</p>
+                         </div>
+                     </div>
+                      <div class="timeline-item timeline-right fade-in-section" style="transition-delay: 0.75s;">
+                         <div class="timeline-content">
+                             <span class="date">Literary Contribution</span> <h3>Co-Authored "God Did Not Come to the Party"</h3>
+                             <p>Co-authored a powerful and inspiring book, a rallying call for African youth to drive their own sustainable future.</p>
+                         </div>
+                     </div>
+                      <div class="timeline-item timeline-left fade-in-section" style="transition-delay: 0.9s;">
+                         <div class="timeline-content">
+                             <span class="date">Recognition</span> <h3>Chieftaincy Title</h3>
+                             <p>Honored with the prestigious chieftaincy title, “Ome k’ahuru anya I,” by Mgbirichi and Abakuru Autonomous Communities in Imo State, Nigeria, recognizing his contributions to community development.</p>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="personal" class="section-padding" style="background-color: var(--bg-secondary);">
+             <div class="container mx-auto text-center fade-in-section">
+                 <h2 class="section-heading inline-block">Personal Life</h2>
+                 <p class="section-subheading max-w-2xl">
+                    Balancing professional excellence with personal fulfillment and family values.
+                 </p>
+                 <p class="text-lg text-gray-700 mt-4 max-w-3xl mx-auto">
+                     A proud father to two sons, Emeka Thato and Chinedu Ofentse, both carving successful paths in Information Technology. Theo actively encourages their pursuits, supporting their blossoming careers alongside their shared passion for soccer.
+                 </p>
+             </div>
+         </section>
+
+
+        <section id="contact" class="section-padding text-center fade-in-section">
+            <div class="container mx-auto">
+                 <h2 class="section-heading">Connect & Explore Opportunities</h2>
+                 <p class="section-subheading max-w-2xl">
+                     Engage with a leader who is shaping the future of business in Africa.
+                 </p>
+                <a href="https://interimconsulting.co.za/contact/" target="_blank" rel="noopener noreferrer" class="contact-button">
+                    Contact Interim Consulting
+                </a>
+                 <div class="mt-16 flex justify-center space-x-8">
+                      <a href="#" aria-label="LinkedIn Profile (Placeholder)" class="text-gray-600 hover:text-gray-900 transition-colors duration-300 transform hover:scale-110">
+                          <i data-lucide="linkedin" class="w-7 h-7"></i>
+                      </a>
+                      <a href="#" aria-label="Twitter Profile (Placeholder)" class="text-gray-600 hover:text-gray-900 transition-colors duration-300 transform hover:scale-110">
+                          <i data-lucide="twitter" class="w-7 h-7"></i>
+                      </a>
+                      </div>
+            </div>
+        </section>
+
+        <footer class="text-gray-600">
+            <div class="container mx-auto px-6 text-center text-sm">
+                <p>&copy; <span id="current-year"></span> Chukwudi Theophilus Nwamadi. All Rights Reserved.</p>
+                <p class="mt-1 opacity-80 text-xs">Driving Excellence, Building Futures.</p>
+            </div>
+        </footer>
+
+    </div> <script>
+        // --- JavaScript for Animations and Functionality ---
+
+        // Function to safely run code after DOM is ready
+        function ready(fn) {
+          if (document.readyState !== 'loading'){
+            fn();
+          } else {
+            document.addEventListener('DOMContentLoaded', fn);
+          }
+        }
+
+        ready(() => {
+            // --- Remove Lava Lamp Background JS ---
+            // Code related to the canvas and its animation has been removed.
+
+
+            // --- Other Initializations ---
+
+            // 1. Animate Name on Load
+            // Using the full name for formality
+            const nameToAnimate = "Chukwudi Theophilus Nwamadi";
+            const animatedNameElement = document.getElementById('animated-name');
+            if (animatedNameElement) {
+                animatedNameElement.innerHTML = ''; // Clear
+                nameToAnimate.split('').forEach((char, index) => {
+                    const span = document.createElement('span');
+                    span.textContent = char === ' ' ? '\u00A0' : char; // Non-breaking space
+                    span.className = 'name-char';
+                    span.style.transitionDelay = `${index * 0.03}s`; // Slightly faster stagger
+                    animatedNameElement.appendChild(span);
+                });
+
+                setTimeout(() => {
+                    const chars = animatedNameElement.querySelectorAll('.name-char');
+                    chars.forEach(char => {
+                        char.style.opacity = '1';
+                        char.style.transform = 'translateY(0)'; // Simpler transform
+                    });
+                }, 100); // Small delay
+            }
+
+            // 2. Set Current Year in Footer
+            const currentYearElement = document.getElementById('current-year');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+
+            // 3. Initialize Lucide Icons
+            if (typeof lucide !== 'undefined') {
+                try {
+                    lucide.createIcons();
+                } catch (error) {
+                    console.error("Error creating Lucide icons:", error);
+                }
+            } else {
+                 console.warn("Lucide library not found.");
+            }
+
+
+            // 4. Scroll Animations (Fade-in Sections & Timeline Items)
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+
+                const observerCallback = (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                };
+
+                const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+
+                document.querySelectorAll('.fade-in-section').forEach(el => {
+                    scrollObserver.observe(el);
+                });
+                 document.querySelectorAll('.timeline-item').forEach(el => {
+                     scrollObserver.observe(el);
+                 });
+
+                 // Add slight delay to info card animations
+                 document.querySelectorAll('#investment .info-card').forEach((card, index) => {
+                      if (!card.classList.contains('is-visible')) {
+                         card.style.transition = `opacity 0.7s ease-out ${index * 0.1}s, transform 0.7s ease-out ${index * 0.1}s`;
+                      }
+                  });
+                  // Add slight delay to timeline item animations
+                  document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                       if (!item.classList.contains('is-visible')) {
+                          item.style.transition = `opacity 0.6s ease-out ${index * 0.12}s, transform 0.6s ease-out ${index * 0.12}s`; /* Slightly adjusted delay */
+                       }
+                   });
+
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                document.querySelectorAll('.fade-in-section, .timeline-item').forEach(el => {
+                     el.style.opacity = '1';
+                     el.style.transform = 'translateY(0)';
+                });
+                 console.warn("IntersectionObserver not supported, scroll animations disabled.");
+            }
+
+
+            // 5. Sticky Navbar Background & Active Link Highlighting
+            const nav = document.getElementById('navbar');
+            const navLinks = nav ? Array.from(nav.querySelectorAll('a.nav-link')) : [];
+            const sections = Array.from(document.querySelectorAll('.content-wrapper > section[id]'));
+
+            function updateActiveLink() {
+                if (!nav || navLinks.length === 0 || sections.length === 0) return;
+
+                let currentSectionId = '';
+                const offset = nav.offsetHeight + 100;
+                const scrollPosition = window.scrollY + offset;
+
+                sections.forEach(section => {
+                    if (scrollPosition >= section.offsetTop) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                 if (window.scrollY < (sections[0]?.offsetTop ?? 200) - offset) {
+                     currentSectionId = 'home';
+                 }
+                  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                      const lastSection = sections[sections.length - 1];
+                      if (lastSection) currentSectionId = lastSection.id;
+                  }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                if (nav) {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('scrolled');
+                    } else {
+                        nav.classList.remove('scrolled');
+                    }
+                }
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(updateActiveLink, 100);
+            }, { passive: true });
+            updateActiveLink();
+
+
+            // 6. Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon && typeof lucide !== 'undefined') {
+                        icon.dataset.lucide = mobileMenu.classList.contains('hidden') ? 'menu' : 'x';
+                         try { lucide.createIcons(); } catch (e) { console.error(e); }
+                    }
+                });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                         mobileMenu.classList.add('hidden');
+                         const icon = mobileMenuButton.querySelector('i');
+                         if (icon && typeof lucide !== 'undefined') {
+                             icon.dataset.lucide = 'menu';
+                             try { lucide.createIcons(); } catch (e) { console.error(e); }
+                         }
+                    });
+                });
+            }
+
+        }); // End DOMContentLoaded wrapper
+
+    </script>
+
+</body>
+</html>
